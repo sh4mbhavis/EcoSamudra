@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Palette 1: Cyber Abyssal Cyan & Emerald (Default) */
+  :root, .theme-cyan {
+    --bg-primary: #030914;
+    --bg-card: rgba(10, 25, 47, 0.75);
+    --border-color: rgba(0, 242, 254, 0.25);
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --accent-cyan: #00f2fe;
+    --accent-emerald: #10b981;
+    --accent-amber: #f59e0b;
+    --card-hover-border: rgba(0, 242, 254, 0.5);
+    --card-glow: rgba(0, 242, 254, 0.15);
+  }
+
+  /* Palette 2: Royal Sapphire & Sunset Amber */
+  .theme-sapphire {
+    --bg-primary: #050b1e;
+    --bg-card: rgba(15, 30, 66, 0.8);
+    --border-color: rgba(56, 189, 248, 0.3);
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --accent-cyan: #38bdf8;
+    --accent-emerald: #34d399;
+    --accent-amber: #fbbf24;
+    --card-hover-border: rgba(56, 189, 248, 0.6);
+    --card-glow: rgba(56, 189, 248, 0.18);
+  }
+
+  /* Palette 3: Bioluminescent Deep Teal & Mint */
+  .theme-teal {
+    --bg-primary: #031416;
+    --bg-card: rgba(10, 41, 45, 0.8);
+    --border-color: rgba(0, 229, 255, 0.3);
+    --text-primary: #f8fafc;
+    --text-secondary: #a7f3d0;
+    --accent-cyan: #00e5ff;
+    --accent-emerald: #2edd8f;
+    --accent-amber: #fbbf24;
+    --card-hover-border: rgba(0, 229, 255, 0.6);
+    --card-glow: rgba(0, 229, 255, 0.18);
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.4s ease, color 0.4s ease;
+    overflow-x: hidden;
+  }
+}
+
+/* Glassmorphism Panel Utilities */
+.glass-panel {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-panel-hover:hover {
+  border-color: var(--card-hover-border);
+  box-shadow: 0 12px 40px 0 var(--card-glow);
+  transform: translateY(-2px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(3, 9, 20, 0.95);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 242, 254, 0.3);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-cyan);
+}
+
+/* Text Gradients */
+.text-gradient-cyan {
+  background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-emerald {
+  background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
